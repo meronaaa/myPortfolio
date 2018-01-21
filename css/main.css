@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.openwrapper {
+  width: 100%;
+  position: relative;
+  background: rgb(220, 225, 232);
+  font-family: 'century gothic';
+  display: none;
+  /* 삭제요망 */
+}
+
+.openwrapper .cover-topleft {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.openwrapper .cover-bottomright {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.openwrapper .startbtn {
+  width: 450px;
+  height: 450px;
+  color: black;
+  background: white;
+  margin: auto;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+}
+
+.startbtn .text-box {
+  margin: 100px auto;
+}
+
+.startbtn .text-box p:first-child {
+  font-size: 28px;
+  line-height: 80px;
+}
+
+.startbtn .text-box p:last-child {
+  line-height: 80px;
+}
+
+.highlight {
+  font-family: Impact, sans-serif;
+  letter-spacing: 1px;
+  font-size: 56px;
+}
+
+.startbtn .text-box span {
+  font-size: 28px;
+  margin-top: 60px;
+  display: block;
+  line-height: 80px;
+}
+
+/* ------------------------------ 표지 끝 ------------------------------ */
+
+.wrapper {
+  width: 1600px;
+  margin: auto;
+}
+
+header {
+  width: 100%;
+  height: 160px;
+  margin: 0;
+  position: relative;
+}
+
+header h1 {
+  display: inline-block;
+  width: 200px;
+  height: 55px;
+  background-image: url(../img/logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  padding-top: 10px;
+  background-position: bottom;
+}
+
+.gnb {
+  width: 100%;
+  height: 60px;
+  background: rgb(163, 163, 163);
+  font-size: 24px;
+  line-height: 58px;
+  letter-spacing: -1px;
+  font-family: arial;
+}
+
+.gnb ul {
+  float: right;
+  margin-right: 80px;
+}
+
+.gnb ul li {
+  float: left;
+  margin-left: 50px;
+}
+
+.gnb ul li a {
+  color: black;
+}
