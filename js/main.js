@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  // moveBG();
+  moveBG();
 })
 
 $(window).resize(function() {
-  // moveBG();
+  moveBG();
 })
 
 function moveBG() {
