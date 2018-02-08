@@ -1,10 +1,15 @@
 @charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .openwrapper {
   width: 100%;
   position: relative;
   background: rgb(220, 225, 232);
   font-family: 'century gothic';
-
 }
 
 .openwrapper .cover-topleft {
@@ -45,7 +50,7 @@
 }
 
 .highlight {
-  font-family: Impact, sans-serif;
+  font-family: impact;
   letter-spacing: 1px;
   font-size: 56px;
 }
@@ -57,45 +62,64 @@
   line-height: 80px;
 }
 
+
 /* ------------------------------ 표지 끝 ------------------------------ */
 
 .wrapper {
-  width: 1600px;
+  width: 100%;
   margin: auto;
 }
 
 header {
   width: 100%;
-  height: 160px;
   margin: 0;
   position: relative;
+  overflow: hidden;
+  box-shadow: -1px 6px 10px rgba(41, 41, 41, 0.78);
 }
 
 header h1 {
   display: inline-block;
-  width: 200px;
-  height: 55px;
-  background-image: url(../img/logo.png);
-  background-size: contain;
+  width: 100%;
+  background-image: url(../img/backimg.png);
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   text-indent: -9999px;
-  padding-top: 10px;
+  position: relative;
+}
+
+nav {
+  width: 100%;
+  height: 70px;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0px;
+  background-image: url(../img/backimg.png);
   background-position: bottom;
+  background-size: cover;
+}
+
+.opacity {
+  width: inherit;
+  height: inherit;
+  /* background: linear-gradient(to right, rgba(153, 153, 153, 0.35), rgba(28, 28, 28, 0.57)); */
+  border-bottom: 0.5px solid rgb(52, 52, 52);
+  box-shadow: -1px 6px 10px rgba(41, 41, 41, 0.78);
 }
 
 .gnb {
-  width: 100%;
-  height: 60px;
-  background: rgb(163, 163, 163);
-  font-size: 24px;
-  line-height: 58px;
+  width: 1200px;
+  height: inherit;
+  font-size: 20px;
+  line-height: 71px;
   letter-spacing: -1px;
   font-family: arial;
+  margin: auto;
 }
 
 .gnb ul {
   float: right;
-  margin-right: 80px;
 }
 
 .gnb ul li {
@@ -104,5 +128,40 @@ header h1 {
 }
 
 .gnb ul li a {
-  color: black;
+  color: rgb(186, 186, 186);
+}
+
+
+/* ------------------------------ 헤더 끝 ------------------------------ */
+
+section {
+  width: 100%;
+  overflow: hidden;
+}
+
+section h2 {
+  font-size: 44px;
+  font-family: 'times';
+}
+
+.oneline {
+  display: block;
+  content: "";
+  height: 1px;
+  width: 80px;
+  background: black;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.works {
+  width: 100%;
+  height: 1000px;
+  text-align: center;
+  padding-top:200px;
+}
+
+.worksinner {
+  width: 1200px;
+  margin: auto;
 }

@@ -1,10 +1,49 @@
 $(document).ready(function() {
-  moveBG();
+  // moveBG();
+  wrapperControl();
+  navControl();
+
 })
 
 $(window).resize(function() {
-  moveBG();
+  // moveBG();
+  wrapperControl();
+  navControl();
 })
+
+
+function navControl() {
+  $(window).scroll(function() {
+    //스크롤위치
+    var scrollPOS = $(this).scrollTop();
+    //헤더높이
+    var headerH = $('nav').height();
+    console.log(headerH);
+    var fixedLocate = $('nav').prev().height();
+
+    console.log(scrollPOS,fixedLocate);
+    if (scrollPOS + headerH> fixedLocate) {
+        $('nav').css({ position: 'fixed', top: '0'});
+        $('.opacity').css({
+            background: 'linear-gradient(to right, rgba(173, 173, 173, 0.45), rgba(48, 48, 48, 0.57))'
+        })
+    } else {
+        $('nav').css({ position: 'absolute', top: fixedLocate - headerH +'px' });
+        $('.opacity').css({
+          background:'rgba(43, 43, 43, 0)'
+        });
+    };
+  })
+
+}
+
+function wrapperControl() {
+  var nav_height = $('nav').height();
+  var h1_height = $(window).height();
+  $('h1').css({
+    'height': h1_height
+  })
+}
 
 function moveBG() {
   var inW = $(window).width();
