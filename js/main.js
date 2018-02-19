@@ -1,12 +1,12 @@
 $(document).ready(function() {
-  // moveBG();
+  moveBG();
   wrapperControl();
   navControl();
 
 })
 
 $(window).resize(function() {
-  // moveBG();
+  moveBG();
   wrapperControl();
   navControl();
 })
