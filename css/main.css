@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/jejugothic.css);
 * {
   padding: 0;
   margin: 0;
@@ -76,6 +77,8 @@ header {
   position: relative;
   overflow: hidden;
   box-shadow: -1px 6px 10px rgba(41, 41, 41, 0.78);
+  box-sizing: border-box;
+  margin-bottom: 100px;
 }
 
 header h1 {
@@ -165,7 +168,7 @@ section h2 {
 .works {
   width: 100%;
   text-align: center;
-  padding-top: 250px;
+  padding-top: 30px;
   margin-bottom: 260px;
 }
 
@@ -208,13 +211,16 @@ section h2 {
   left: 20px;
   padding: 40px;
   color: white;
-  font-family: '고딕';
+  font-family: 'Jeju Gothic';
   display: none;
 }
 
-.portfolioText>h3 {
+.portfolioText>a {
+  color: white;
+}
+
+.portfolioText>a>h3 {
   font-size: 32px;
-  font-weight: bold;
   display: block;
   padding-bottom: 10px;
 }
@@ -226,7 +232,7 @@ section h2 {
   margin-bottom: 50px;
 }
 
-.portfolioText p {
+.portfolioText a>p {
   font-family: century gothic;
   font-size: 22px;
   text-align: left;
@@ -281,11 +287,13 @@ ol>li>p {
 
 .skills {
   margin-bottom: 270px;
+  font-family: 'Jeju gothic';
 }
 
 .aboutme {
   width: 100%;
   margin-bottom: 200px;
+  font-family: 'Jeju gothic';
 }
 
 .aboutmeinner {
@@ -313,7 +321,9 @@ ol>li>p {
   content: "";
   clear: both;
 }
-
+.desc {
+  font-size: 16px;
+}
 .aboutmephoto>img {
   display: block;
   width: 300px;

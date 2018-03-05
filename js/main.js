@@ -1,16 +1,49 @@
 $(document).ready(function() {
-  moveBG();
   wrapperControl();
   navControl();
-
+  portfolioText();
+  scrollNav();
+  var inH = $(window).height();
+  var skill = $('.skills').offset().top-100;
+  var about = $('.aboutme').offset().top-100;
+  var work =  $('.works').offset().top-70;
+  var contact =  $('.contact').offset().top-100;
+  $('#skill').click(function() {
+    $('html').animate({
+      scrollTop: skill
+    });
+    return false;
+  })
+  $('#work').click(function() {
+    $('html').animate({
+      scrollTop: work
+    });
+    return false;
+  })
+  $('#about').click(function() {
+    $('html').animate({
+      scrollTop: about
+    });
+    return false;
+  })
+  $('#contact').click(function() {
+    $('html').animate({
+      scrollTop: contact
+    });
+    return false;
+  })
 })
 
 $(window).resize(function() {
-  moveBG();
   wrapperControl();
   navControl();
+  portfolioText();
+  scrollNav()
 })
 
+$(window).scroll(function() {
+  scrollNav();
+})
 
 function navControl() {
   $(window).scroll(function() {
@@ -21,17 +54,23 @@ function navControl() {
     console.log(headerH);
     var fixedLocate = $('nav').prev().height();
 
-    console.log(scrollPOS,fixedLocate);
-    if (scrollPOS + headerH> fixedLocate) {
-        $('nav').css({ position: 'fixed', top: '0'});
-        $('.opacity').css({
-            background: 'linear-gradient(to right, rgba(173, 173, 173, 0.45), rgba(48, 48, 48, 0.57))'
-        })
+    console.log(scrollPOS, fixedLocate);
+    if (scrollPOS + headerH > fixedLocate) {
+      $('nav').css({
+        position: 'fixed',
+        top: '0'
+      });
+      $('.opacity').css({
+        background: 'linear-gradient(to right, rgba(173, 173, 173, 0.45), rgba(48, 48, 48, 0.57))'
+      })
     } else {
-        $('nav').css({ position: 'absolute', top: fixedLocate - headerH +'px' });
-        $('.opacity').css({
-          background:'rgba(43, 43, 43, 0)'
-        });
+      $('nav').css({
+        position: 'absolute',
+        top: fixedLocate - headerH + 'px'
+      });
+      $('.opacity').css({
+        background: 'rgba(43, 43, 43, 0)'
+      });
     };
   })
 
@@ -46,6 +85,9 @@ function wrapperControl() {
 }
 
 function moveBG() {
+  $('.wrapper').css({
+    'opacity': 0
+  });
   var inW = $(window).width();
   var inH = $(window).height();
   var startbtnH = $('.startbtn').height();
@@ -64,31 +106,44 @@ function moveBG() {
     'left': horizenPos
   });
 
-  $('.wrapper').hide();
-
   $('.startbtn').click(function() {
 
     $(this).fadeOut(1300, function() {
-
       $('.cover-topleft').css({
         'border-top': inH + 'px solid #2d2d2d',
         'border-right': inW + 'px solid transparent'
       }).delay(300).animate({
         'margin-left': inW * -1 + 'px'
       }, 2700);
-
       $('.cover-bottomright').css({
         'border-bottom': inH + 'px solid #2d2d2d',
         'border-left': inW + 'px solid transparent'
       }).delay(300).animate({
         'margin-left': inW + 'px'
       }, 2700);
-
       $('.openwrapper').fadeOut(2800, function() {
-        $('.wrapper').fadeIn(800);
+
+        $('.wrapper').css({
+          'opacity': 1
+        });
+        $('.openwrapper').hide();
       });
     });
   })
-  console.log('start Width: ', inW);
-  console.log('start Height: ', inH);
+}
+
+function portfolioText() {
+  $('.portfoliobox').hover(
+    function() {
+      $(this).children('.portfolioText').stop().slideDown();
+    },
+    function() {
+      $(this).children('.portfolioText').slideUp();
+    }
+  );
+}
+
+function scrollNav() {
+
+
 }
