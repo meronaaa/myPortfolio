@@ -1,0 +1,18 @@
+$(document).ready(function(){
+  //gnb
+  $('.gnb>li').click(function() {
+    $('.gnb>li').removeClass('borderForce')
+    $(this).next().toggleClass('borderForce')
+    $(this).children('.gnb_2dep').slideDown();
+    $('.gnb>li').children('a').css({'background-image': 'url(/m/images/common/gnb_down.png)'})
+    if ($(this).children('ul.gnb_2dep').hasClass('active')) {
+      $(this).children('a').css({'background-image': 'url(/m/images/common/gnb_down.png)'})
+      $(this).children('ul.gnb_2dep').removeClass('active').stop().slideUp();
+      $('.gnb>li').removeClass('borderForce')
+    } else {
+      $(this).children('a').css({'background-image': 'url(/m/images/common/gnb_up.png)'})
+      $('.gnb li').children('ul.gnb_2dep').removeClass('active').stop().slideUp();
+      $(this).children('ul.gnb_2dep').stop().slideDown().addClass('active');
+    }
+  })
+})
